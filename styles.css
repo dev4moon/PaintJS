@@ -25,6 +25,12 @@ body {
   align-items: center;
 }
 
+/* let's change range input css style */
+.controls__range input:hover {
+  cursor: pointer;
+  color: white;
+}
+
 .controls .controls__btns {
   margin-bottom: 30px;
 }
