@@ -1,5 +1,6 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
+const colors = document.getElementsByClassName("jsColor");
 
 //CSS와 별개로 픽셀 컨트롤을 위한 캔버스 사이즈 지정 필요
 canvas.width = 700;
@@ -31,8 +32,10 @@ function onMouseMove(event) {
   }
 }
 
-function onMouseDown(event) {
-  painting = true;
+// 클릭시 각 div의 색을 가져와 stroke 색상으로 지정하기
+function handleColorClick(event) {
+  const color = event.target.style.backgroundColor;
+  ctx.strokeStyle = color;
 }
 
 if (canvas) {
@@ -42,6 +45,7 @@ if (canvas) {
   canvas.addEventListener("mouseleave", stopPainting);
 }
 
-function init() {}
-
-init();
+//array로 가져와서 각 div로 나누고 eventlistener 추가
+Array.from(colors).forEach((color) =>
+  color.addEventListener("click", handleColorClick)
+);
