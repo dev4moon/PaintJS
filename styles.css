@@ -18,6 +18,11 @@ body {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.canvas:hover {
+  cursor: url("https://downloads.totallyfreecursors.com/cursor_files/paint.ani"),
+    url("https://downloads.totallyfreecursors.com/thumbnails/paint.gif"), auto;
+}
+
 .controls {
   margin-top: 80px;
   display: flex;
